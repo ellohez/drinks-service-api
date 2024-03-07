@@ -9,5 +9,4 @@ describe("GET /tea", () => {
       niceCupOf: "Yorkshire tea",
     });
   });
-  test("should ", () => {});
 });
