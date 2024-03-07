@@ -37,3 +37,15 @@ describe("GET /coffee", () => {
   });
 });
 
+describe("GET / coffeelover", () => {
+  // test("should return the correct response", async () => {
+  //   const res = await request(app).get("/coffeelover");
+  //   expect(res.statusCode).toEqual(200);
+  // });
+  test("GET should return correct message", async () => {
+    const res = await request(app).get("/coffeelover");
+    expect(res.statusCode).toEqual(200);
+    expect(res.text).toEqual("I like coffee!");
+  });
+});
+
