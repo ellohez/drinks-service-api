@@ -4,9 +4,12 @@ export const getTea = (
   req: Request<object, object, object, { teaType: string | undefined }>,
   res: Response
 ) => {
-  const teaType = req.query;
+  let chosenTea = req.query.teaType;
+  if (chosenTea === undefined) {
+    chosenTea = "Regular";
+  }
   const tea = {
-    niceCupOf: `${teaType.teaType} tea`,
+    niceCupOf: `${chosenTea} tea`,
   };
 
   res.json(tea).status(200);

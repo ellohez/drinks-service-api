@@ -9,4 +9,11 @@ describe("GET /tea", () => {
       niceCupOf: "Yorkshire tea",
     });
   });
+  test("should return regular tea if no teaType query param", async () => {
+    const res = await request(app).get("/tea");
+    expect(res.statusCode).toEqual(200);
+    expect(res.body).toEqual({
+      niceCupOf: "Regular tea",
+    });
+  });
 });
